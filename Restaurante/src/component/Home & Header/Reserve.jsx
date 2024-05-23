@@ -42,7 +42,10 @@ const Reserve = () => {
     console.log(data);
     localStorage.setItem('user', JSON.stringify(data))
     setData(initialValue);
-    navigate("/");
+    setTimeout(()=>{
+      navigate("/menu");
+    },2000);
+    
   };
 
   return (

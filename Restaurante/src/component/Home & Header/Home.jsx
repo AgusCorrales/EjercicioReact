@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Home.css"
 
-const Home = (props) => {
-    console.log(props)
-
+const Home = () => {
   return (
-    <div className='text-home'>Name: {props.dishe.name} <br/> Description: {props.dishe.description} <br/> Price: {props.dishe.price}</div>
+    <div>
+      <h1>Parrilla El Tucu</h1>
+      <h3>La mejor carne Argentina hecha por el mejor tucumano</h3>
+    </div>
   )
 }
 

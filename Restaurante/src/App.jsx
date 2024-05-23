@@ -1,5 +1,10 @@
-import './App.css'
-import Home from './component/Home & Header/Home'
+import "./App.css"
+import { BrowserRouter,Route,Routes } from "react-router-dom"
+import Home from './component/Home & Header/Menu'
+import Reserve from "./component/Home & Header/Reserve"
+import Header from "./component/Home & Header/Header"
+import Menu from "./component/Home & Header/Home"
+
 
 function App() {
   const dishes = [
@@ -22,11 +27,17 @@ function App() {
       price:15
     }
   ]
-  const printDishes = dishes.map((dishe)=><Home dishe={dishe} />)
+  const printDishes = dishes.map((dishe)=><Home dishe={dishe} key={dishe.id}/>)
   return (
-    <div>
-      {printDishes}
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/reserve" element={<Reserve/>}/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/" element={printDishes}/>
+
+      </Routes>
+    </BrowserRouter>
   )
    
 }
